@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/notesFragment">
+
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.example.mynote.ui.notes.NotesFragment"
+        android:label="Notes"
+        tools:layout="@layout/fragment_notes">
+        <action
+            android:id="@+id/action_notesFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+        <action
+            android:id="@+id/action_notesFragment_to_noteDetailFragment"
+            app:destination="@id/noteDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditNoteFragment"
+        android:name="com.example.mynote.ui.addeditnote.AddEditNoteFragment"
+        android:label="New/Edit Note"
+        tools:layout="@layout/fragment_add_edit_note">
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_addEditNoteFragment_to_notesFragment"
+            app:destination="@id/notesFragment" />
+        <action
+            android:id="@+id/action_addEditNoteFragment_to_paintViewFragment"
+            app:destination="@id/paintViewFragment" />
+        <argument
+            android:name="savedBitmapPath"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/paintViewFragment"
+        android:name="com.example.mynote.ui.paintview.PaintViewFragment"
+        android:label="fragment_paint_view"
+        tools:layout="@layout/fragment_paint_view" >
+        <argument
+            android:name="bitmapUriString"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_paintViewFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment"
+            app:popUpTo="@id/notesFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <dialog
+        android:id="@+id/bottomSheetDialogFragment"
+        android:name="com.example.mynote.ui.editdialog.EditDialogFragment"
+        android:label="fragment_bottom_sheet_dialog"
+        tools:layout="@layout/fragment_edit_dialog" />
+    <fragment
+        android:id="@+id/noteDetailFragment"
+        android:name="com.example.mynote.ui.notedetail.NoteDetailFragment"
+        android:label="Note Detail"
+        tools:layout="@layout/fragment_note_detail">
+        <argument
+            android:name="id"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_noteDetailFragment_to_addEditNoteFragment"
+            app:destination="@id/addEditNoteFragment" />
+    </fragment>
+</navigation>

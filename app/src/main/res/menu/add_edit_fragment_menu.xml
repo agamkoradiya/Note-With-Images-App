@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_menu_dot_24"
+        android:orderInCategory="100"
+        android:title=""
+        app:showAsAction="always">
+        <menu>
+
+            <item
+                android:id="@+id/take_photo"
+                android:icon="@drawable/ic_photo_camera_24"
+                android:title="@string/take_photo"
+                app:iconTint="@color/menu_color"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/add_image"
+                android:icon="@drawable/ic_insert_photo_24"
+                android:title="@string/add_image"
+                app:iconTint="@color/menu_color"
+                app:showAsAction="never" />
+
+            <item
+                android:id="@+id/drawing"
+                android:icon="@drawable/ic_brush_24"
+                android:title="@string/drawing"
+                app:iconTint="@color/menu_color"
+                app:showAsAction="never" />
+        </menu>
+    </item>
+</menu>

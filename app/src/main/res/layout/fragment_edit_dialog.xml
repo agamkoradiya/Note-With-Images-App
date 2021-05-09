@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.editdialog.EditDialogFragment">
+
+    <com.flask.colorpicker.ColorPickerView
+        android:id="@+id/color_picker_view"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="5dp"
+        app:alphaSlider="true"
+        app:alphaSliderView="@+id/v_alpha_slider"
+        app:density="18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lightnessSlider="true"
+        app:lightnessSliderView="@+id/v_lightness_slider"
+        app:wheelType="FLOWER" />
+
+    <com.flask.colorpicker.slider.LightnessSlider
+        android:id="@+id/v_lightness_slider"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/color_picker_view" />
+
+    <com.flask.colorpicker.slider.AlphaSlider
+        android:id="@+id/v_alpha_slider"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_lightness_slider" />
+
+    <com.ramotion.fluidslider.FluidSlider
+        android:id="@+id/fluid_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:bar_color="@color/black"
+        app:duration="@android:integer/config_mediumAnimTime"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/v_alpha_slider"
+        app:size="small" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontal_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fluid_slider">
+
+        <LinearLayout
+            android:id="@+id/blur_menu_parent_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_corner"
+            android:orientation="horizontal"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp">
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/blur_chip_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:selectionRequired="true"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/normal_blur_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/normal_blur"
+                    android:textColor="@color/black"
+                    app:chipBackgroundColor="@color/bg_chip_state_list"
+                    app:chipCornerRadius="3dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="0.3dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/inner_blur_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/inner_blur"
+                    android:textColor="@color/black"
+                    app:chipBackgroundColor="@color/bg_chip_state_list"
+                    app:chipCornerRadius="3dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="0.3dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/none_blur_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/none"
+                    android:textColor="@color/black"
+                    app:chipBackgroundColor="@color/bg_chip_state_list"
+                    app:chipCornerRadius="3dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="0.3dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/outer_blur_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/outer_blur"
+                    android:textColor="@color/black"
+                    app:chipBackgroundColor="@color/bg_chip_state_list"
+                    app:chipCornerRadius="3dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="0.3dp" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/solid_blur_chip"
+                    style="@style/Widget.MaterialComponents.Chip.Choice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="@string/solid_blur"
+                    android:textColor="@color/black"
+                    app:chipBackgroundColor="@color/bg_chip_state_list"
+                    app:chipCornerRadius="3dp"
+                    app:chipStrokeColor="@color/black"
+                    app:chipStrokeWidth="0.3dp" />
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <LinearLayout
+        android:id="@+id/options_parent_layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_scroll_view">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/bg_change_btn_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/bg_color"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipCornerRadius="3dp"
+            app:chipStrokeColor="@color/black"
+            app:chipStrokeWidth="0.3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/undo_btn_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/undo"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipCornerRadius="3dp"
+            app:chipStrokeColor="@color/black"
+            app:chipStrokeWidth="0.3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/eraser_btn_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/eraser"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipCornerRadius="3dp"
+            app:chipStrokeColor="@color/black"
+            app:chipStrokeWidth="0.3dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/options_parent_layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/rounded_corner"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/options_parent_layout_1">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/discard_btn_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/discard"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipCornerRadius="3dp"
+            app:chipStrokeColor="@color/black"
+            app:chipStrokeWidth="0.3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/clear_all_btn_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/clear_all"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipCornerRadius="3dp"
+            app:chipStrokeColor="@color/black"
+            app:chipStrokeWidth="0.3dp" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/save_btn_chip"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:text="@string/save"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:chipBackgroundColor="@color/bg_chip_state_list"
+            app:chipCornerRadius="3dp"
+            app:chipStrokeColor="@color/black"
+            app:chipStrokeWidth="0.3dp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="preloaded_fonts" translatable="false">
+        <item>@font/cabin_bold</item>
+        <item>@font/cabin_medium</item>
+        <item>@font/cairo_light</item>
+        <item>@font/candal</item>
+        <item>@font/carme</item>
+        <item>@font/telex</item>
+        <item>@font/tenali_ramakrishna</item>
+        <item>@font/ubuntu_bold</item>
+        <item>@font/ubuntu_light</item>
+    </array>
+</resources>
