@@ -37,7 +37,7 @@ https://user-images.githubusercontent.com/54389203/117583730-797c6080-b126-11eb-
   ```
     imageView.setImageBitmap(BitmapFactory.decodeFile(path))
   ```
-  - add new fragment/dialog to show full size original image when use click on thumbnail
+  - add new fragment/dialog to show full size original image when use click on thumbnail using above code
   
 - Add functionality for sorting and searching
 - Add swipe to delete functionality
