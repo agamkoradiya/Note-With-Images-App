@@ -42,6 +42,6 @@ https://user-images.githubusercontent.com/54389203/117583730-797c6080-b126-11eb-
 - Add functionality for sorting and searching
 - Add swipe to delete functionality
 
-### Contribution
+# Contribution
 
 Awesome 😍 If you would like to contribute you're most welcome! 💛
